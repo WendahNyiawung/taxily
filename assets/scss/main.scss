@@ -1,0 +1,76 @@
+//variables 
+$primary:#110A2E;
+$secondary:#F7D100;
+$danger:#adadad;
+
+@mixin bg-properties{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
+
+.booking-form{
+    margin-top: -1rem;
+    
+}
+.-mt-4{
+    margin-top: -10rem;
+}
+.px-6{
+    padding-right: 7rem;
+    padding-left: 7rem;
+}
+
+.text-hover{
+    color: $secondary;
+    
+}
+.carousel-item{
+    height: 95vh;
+}
+.item-2{
+    @include bg-properties();
+    background-image: linear-gradient(to right, #110a2e73, #110a2e73),url('../assets/imgs/bg-1.jpg');
+    
+}
+.item-1{
+    @include bg-properties;
+    background-image: linear-gradient(to right, #110a2e73, #110a2e73),url('../assets/imgs/bg-2.jpg');
+}
+.taxi{
+    height: 12rem;
+    margin-right: -5rem;
+}
+.input:focus{
+   border-bottom: 1px solid #F7D100; 
+}
+.form-group:focus{
+    outline: none;
+}
+
+
+
+
+
+
+//font family
+.font-primary{
+    font-family: 'Oswald', sans-serif;
+}
+.font-secondary{
+    font-family: 'Anton', sans-serif;
+}
+
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 320px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+@import'../boostrap/scss/bootstrap.scss';
