@@ -1,11 +1,11 @@
 {
-  "name": "taxily",
+  "name": "pickme",
   "version": "1.0.0",
-  "description": "a taxi booking webapp landing page",
+  "description": " taxi booking webapp landing page for a taxi company",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Wendah Desmond",
+  "author": "Wendah Nyiawung",
   "license": "ISC"
 }

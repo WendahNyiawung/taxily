@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
-    <title>Taxily</title>
+    <title>Pickme</title>
 </head>
 <body>
   <!--======== Fixed Nav =======-->
@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-light flex-grow-1">
         <div class="container d-flex flex-row">
             <a href="index.html" class="navbar-brand d-sm-none d-md-none d-lg-block">
-                <h1 class="display-6 font-weight-normal text-primary font-primary text-uppercase">Tax<span class="text-secondary">ily</span></h1>
+                <h1 class="display-6 font-weight-normal text-primary font-primary text-uppercase logo">Pick<span class="text-secondary"> Me</span></h1>
             </a> 
             <div class="flex-grow-1 d-lg-none">
               <button class="d-lg-none d-xl-none">button</button>
@@ -22,14 +22,14 @@
             <a href="index.html" class="navbar-brand d-lg-none d-xl-none flex-grow-1">
               <h1 class="display-6 font-weight-normal text-primary font-primary text-uppercase">Tax<span class="text-secondary">ily</span></h1>
             </a> 
-            <div class="d-flex flex-row font-primary d-sm-none d-md-none d-lg-block">
+            <div class="d-flex flex-row font-primary d-sm-none d-md-none d-lg-block nav-links">
                 <a href="#" class="text-primary text-decoration-none mx-4">Home</a>
                 <a href="#" class="text-primary text-decoration-none mx-4">About</a>
                 <a href="#" class="text-primary text-decoration-none mx-4">Features</a>
                 <a href="#" class="text-primary text-decoration-none mx-4">Get Taxi</a>
                 <a href="#" class="text-primary text-decoration-none mx-4">contact</a>
             </div>   
-            <div class="font-primary  d-sm-none d-md-none d-lg-block">
+            <div class="font-primary  d-sm-none d-md-none d-lg-block phone">
                <a href="tel:+237670056641" class="text-decoration-none">
                 <h4 class="text-secondary font-weight-light">+237 <span class="text-primary">670056641</span></h4> 
                </a>
@@ -42,7 +42,7 @@
             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
         </svg>
-        <button class="btn btn-outline-light btn-sm mx-3 font-primary mt-4 mt-sm-3 rounded-0">BOOK A RIDE</button>
+        <button class="btn btn-outline-light btn-sm mx-3 font-primary mt-4 mt-sm-3 rounded-0 book-btn"  data-toggle="modal" data-target="#exampleModal">BOOK A RIDE</button>
      </div>
     </nav>
   </div>
@@ -58,7 +58,7 @@
       <div class="carousel-item active item-1">
         <div class="container pb-sm-5 pb-md-5">
           <div class="carousel-caption text-center p-5 p-sm-1">
-            <h1 class="font-secondary display-1">Taxily</h1>
+            <h1 class="font-secondary display-1 carousel-h1">PickMe</h1>
             <h4 class="font-secondary">Taxi Booking made Easy</h4>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             <p><a class="btn btn-md btn-secondary rounded-0" href="#" role="button">BOOK A RIDE</a></p>
@@ -69,7 +69,7 @@
         
         <div class="container pb-sm-5">
           <div class="carousel-caption text-center p-5 p-sm-1">
-            <h1 class="font-secondary display-1">Taxily</h1>
+            <h1 class="font-secondary display-1">PickMe</h1>
             <h4 class="font-secondary">Taxi Booking made Easy</h4>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             <p><a class="btn btn-md btn-secondary rounded-0" href="#" role="button">BOOK A RIDE</a></p>
@@ -88,46 +88,254 @@
   </div>
 
    <!--======== Section 1 ========-->
-   <div class="container-fluid position-relative">
-     <form class="d-flex flex-row py-sm-2 p-md-3  mx-auto shadow  booking-form bg-light d-sm-block d-md-block d-lg-flex">
-         <div class="bg-secondary p-2 d-sm-none d-md-none d-lg-block">
-           <img src="assets/imgs/taxi.png" alt="" class="taxi">
-         </div>
-         <div class="flex-grow-1">
-          <h3 class="text-center font-secondary text-primary mb-3">Book a Taxi</h3>
-          <div class="row px-6 d-sm-block d-lg-flex py-3">
-            <div class="col-md-6">
-              <div class="form-group mb-3">
-                <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
-              </div>
-              <div class="form-group mb-3">
-                <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Start Destination">
-              </div>
-              <div class="form-group">
-                <input type="datetime-local" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
-              </div>
+   <div class="container-fluid position-relative mb-5">
+     <form>
+        <div class="py-sm-2 p-md-3  mx-auto w-75 shadow  booking-form bg-light">
+          <div class="d-flex flex-row">
+            <div class="bg-secondary p-2 d-sm-none d-md-none d-lg-none d-xl-block">
+              <img src="assets/imgs/taxi.png" alt="" class="taxi">
             </div>
-            <div class="col-md-6">
-              <div class="form-group mb-3">
-                <input type="tel" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone">
+            <div class="flex-grow-1 w-100 flex-fill ">
+              <h3 class="text-center font-secondary text-primary mb-3">Book a Taxi</h3>
+              <div class="d-sm-block d-md-flex flex-row px-3 px-lg-5">
+                <div class=" d-sm-block">
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
+                  </div>
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Start Destination">
+                  </div>
+                  <div class="form-group">
+                    <input type="datetime-local" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
+                  </div>
+                </div>
+                <div class="w-100 d-sm-block mx-2 mt-sm-3 mt-md-0">
+                  <div class="form-group mb-3">
+                    <input type="tel" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone">
+                  </div>
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="End Destination">
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control border-0 border-bottom border-danger rounded-0 " id="exampleFormControlSelect1">
+                      <option>Service Type</option>
+                      <option>Standared</option>
+                      <option>Business</option>
+                      <option>VIp</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="form-group mb-3">
-                <input type="text" class="form-control border-0 border-bottom border-danger rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="End Destination">
-              </div>
-              <div class="form-group">
-                <select class="form-control border-0 border-bottom border-danger rounded-0 " id="exampleFormControlSelect1">
-                  <option>Service Type</option>
-                  <option>Standared</option>
-                  <option>Business</option>
-                  <option>VIp</option>
-                </select>
-              </div>
+              <button type="submit" class="btn btn-primary rounded-0 mt-3 ml-lg-5 ml-sm-3 font-primary">BOOK Now !</button>
             </div>
           </div>
         </div>
      </form>
+     <!--What we offer -->
+     <div class="container w-75 offers">
+       <h5 class="text-secondary font-primary text-center">WHAT WE OFFER</h5>
+       <h3 class="text-primary font-secondary text-center mt-4">We are a Company of Talented</h3>
+       <!--Services Cards-->
+       <div class="row mt-5">
+         <div class="col-lg-4">
+          <div class="card w-100 p-lg-3  shadow" style="width: 18rem;">
+            <div class="card-body">
+              <svg  viewBox="0 0 512 512" class="card-icon text-center">
+                <path d="M256 93.297c-14.021 0-27.516 4.218-39.025 12.198-3.402 2.359-4.262 7.05-1.921 10.478 2.342 3.428 6.998 4.294 10.4 1.936 9.004-6.243 19.566-9.543 30.546-9.543 29.754 0 53.96 24.388 53.96 54.365s-24.206 54.366-53.96 54.366-53.96-24.389-53.96-54.366c0-8.843 2.038-17.273 6.057-25.055 1.906-3.692.482-8.241-3.182-10.161-3.665-1.919-8.178-.486-10.085 3.206-5.067 9.812-7.746 20.881-7.746 32.01.001 38.287 30.916 69.435 68.916 69.435s68.915-31.148 68.915-69.435c0-38.286-30.915-69.434-68.915-69.434z"/>
+                <path d="M511.426 501.571l-73.804-178.665a7.476 7.476 0 00-6.903-4.639h-73.547c14.305-19.498 26.212-38.919 35.511-57.988 16.48-33.794 24.835-66.613 24.835-97.547C417.517 73.001 345.061 0 256 0S94.483 73.001 94.483 162.731c0 30.934 8.355 63.754 24.835 97.547 9.298 19.069 21.205 38.491 35.511 57.988H81.282a7.476 7.476 0 00-6.903 4.639L24.087 444.651c-1.587 3.842.217 8.252 4.03 9.85.94.394 1.912.581 2.87.581a7.477 7.477 0 006.906-4.641l7.176-17.372h50.906l-26.38 63.862H18.69l7.647-18.513c1.587-3.842-.217-8.252-4.03-9.85-3.815-1.601-8.191.219-9.777 4.06L.575 501.571a7.577 7.577 0 00.683 7.075A7.46 7.46 0 007.478 512h497.044a7.465 7.465 0 006.221-3.354 7.58 7.58 0 00.683-7.075zm-401.987-338.84c0-81.422 65.747-147.663 146.561-147.663S402.561 81.31 402.561 162.731c0 34.143-11.775 88.703-66.245 158.231-.055.065-.104.134-.156.201a498.849 498.849 0 01-8.681 10.757c-29.932 36.062-60.222 62.395-71.48 71.751-11.225-9.324-41.372-35.525-71.283-71.518a499.85 499.85 0 01-8.889-11.01c-.046-.058-.089-.118-.137-.175-54.468-69.523-66.251-124.081-66.251-158.237zm-23.17 170.604h50.907l-18.568 44.948H67.702l18.567-44.948zm43.728 163.597l46.741-113.148 133.014 113.148H129.997zm202.938 0l-154.352-131.3a7.432 7.432 0 00-6.584-1.566 7.493 7.493 0 00-5.143 4.427l-53.057 128.438H85.795l28.296-68.502a7.578 7.578 0 00-.683-7.075 7.462 7.462 0 00-6.221-3.354H51.296l10.182-24.65h62.118a7.476 7.476 0 006.903-4.639l22.876-55.377h12.978a524.116 524.116 0 006.894 8.491c38.585 46.43 76.578 76.239 78.177 77.486a7.431 7.431 0 009.152 0c.879-.685 12.757-10.009 29.673-25.96h84.681c4.13 0 7.478-3.373 7.478-7.534s-3.348-7.534-7.478-7.534h-69.269c10.368-10.503 21.7-22.749 33.093-36.457 2.351-2.83 4.642-5.66 6.894-8.491h80.083l18.567 44.948h-39.457c-4.13 0-7.478 3.373-7.478 7.534s3.347 7.534 7.478 7.534h45.681l10.182 24.65h-154.07a7.481 7.481 0 00-7.006 4.898 7.573 7.573 0 002.104 8.326l75.133 65.707h-43.93zm66.746 0l-73.024-63.862H466.93l26.381 63.862h-93.63z"/>
+              </svg>
+              <h5 class="card-title text-primary font-primary text-center my-2">Rapid City Transfer</h5>
+              <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link d-block text-center font-primary">Learn More</a>
+            </div>
+          </div>
+         </div>
+
+         <div class="col-lg-4 mt-sm-2 mt-lg-0 ">
+          <div class="card w-100  p-lg-3 shadow" style="width: 18rem;">
+            <div class="card-body">
+               <svg  viewBox="0 0 480 480" class="card-icon">
+                <path d="M336 280h16v16h-16zM336 312h16v16h-16zM336 344h16v16h-16zM336 216h16v16h-16zM336 248h16v16h-16zM336 184h16v16h-16zM336 152h16v16h-16z"/><path d="M480 232h-20.688l14.632-14.624-11.312-11.312L448 220.688V200h-16v20.688l-14.632-14.624-11.312 11.312L420.688 232H400v16h20.688l-14.632 14.624 11.312 11.312L432 259.312V400h-.8c-3.825-18.613-20.198-31.979-39.2-32h-8V136h32v-16h-32a55.783 55.783 0 00-16.888-40H384V64h-80V46.528c12.473-4.393 19.023-18.066 14.629-30.539A23.944 23.944 0 00296 0H184c-13.224-.025-23.964 10.675-23.989 23.899A23.944 23.944 0 00176 46.528V64H96v16h16.888A55.783 55.783 0 0096 120H64v16h32v232h-8c-19.002.021-35.375 13.387-39.2 32H48V259.312l14.632 14.624 11.312-11.312L59.312 248H80v-16H59.312l14.632-14.624-11.312-11.312L48 220.688V200H32v20.688l-14.632-14.624-11.312 11.312L20.688 232H0v16h20.688L6.056 262.624l11.312 11.312L32 259.312V400.8C13.389 404.627.024 420.999 0 440v40h480v-40c-.024-19.001-13.389-35.373-32-39.2V259.312l14.632 14.624 11.312-11.312L459.312 248H480v-16zM96 416v48H80v-16H64v16H48v-16H32v16H16v-24c0-13.255 10.745-24 24-24h24v-8c0-13.255 10.745-24 24-24h8v32zm88-400h112a8 8 0 010 16H184a8 8 0 010-16zm104 32v16h-96V48h96zM160 464h-48v-32h48v32zm0-48h-48v-16h48v16zm0-64v32h-48V136h48v216zm0-232h-48c.026-22.08 17.92-39.974 40-40h8v40zm96 344h-32v-24a8 8 0 018-8h16a8 8 0 018 8v24zm48-48v48h-32v-24c0-13.255-10.745-24-24-24h-16c-13.255 0-24 10.745-24 24v24h-32v-64h128v16zm0-32H176v-16h128v16zm0-264v232H176V80h128v40zm64 344h-48v-32h48v32zm0-48h-48v-16h48v16zm0-48v16h-48V136h48v232zm-48-248V80h8c22.08.026 39.974 17.92 40 40h-48zm144 320v24h-16v-16h-16v16h-16v-16h-16v16h-16v-80h8c13.255 0 24 10.745 24 24v8h24c13.255 0 24 10.745 24 24z"/>
+                <path d="M128 280h16v16h-16zM128 312h16v16h-16zM128 344h16v16h-16zM128 216h16v16h-16zM128 248h16v16h-16zM128 184h16v16h-16zM128 152h16v16h-16zM280 96h-80v48h80V96zm-48 32h-16v-16h16v16zm32 0h-16v-16h16v16zM280 160h-80v48h80v-48zm-48 32h-16v-16h16v16zm32 0h-16v-16h16v16zM280 224h-80v48h80v-48zm-48 32h-16v-16h16v16zm32 0h-16v-16h16v16zM280 288h-80v48h80v-48zm-48 32h-16v-16h16v16zm32 0h-16v-16h16v16z"/>
+              </svg>
+              <h5 class="card-title text-primary font-primary text-center my-2">Booking a Hotel</h5>
+              <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link d-block text-center font-primary">Learn More</a>
+              
+            </div>
+          </div>
+         </div>
+
+         <div class="col-lg-4 mt-sm-2 mt-lg-0">
+          <div class="card w-100 p-lg-3 shadow" style="width: 18rem;">
+            <div class="card-body">
+              <svg  viewBox="0 0 512 512" class="card-icon text-center">
+                <path d="M473.595 247.28a235.235 235.235 0 00-8.77-9.572c-9.675-9.971-17.85-16.424-24.297-19.176-11.441-4.885-20.707-5.412-24.162-5.412-4.253 0-7.961 3.066-7.961 7.506v35.626a7.5 7.5 0 007.5 7.5h55.416a7.5 7.5 0 007.348-5.997c.765-3.737-.589-5.299-5.074-10.475zm-50.19 1.471v-19.869a54.751 54.751 0 0111.232 3.444c5.547 2.368 13.505 9.675 20.022 16.425h-31.254zM369.565 227.998c-12.794-.672-23.556 9.153-24.22 21.802-.659 12.544 9.276 23.561 21.802 24.22.41.021.817.032 1.222.032 12.252 0 22.355-9.59 22.999-21.834.667-12.689-9.115-23.554-21.803-24.22zm6.823 23.431a8.028 8.028 0 01-8.453 7.609c-4.387-.228-7.84-4.073-7.609-8.453.224-4.273 3.746-7.621 8.018-7.621.144 0 .289.004.435.012 4.428.232 7.842 4.024 7.609 8.453zM305.841 231.523c-12.788-.672-23.555 9.153-24.22 21.802-.649 12.372 9.496 23.459 21.803 24.218l.273.015c12.445.611 23.297-9.449 23.947-21.815.667-12.689-9.114-23.554-21.803-24.22zm6.824 23.433a8.025 8.025 0 01-8.453 7.609c-4.383-.23-7.839-4.075-7.609-8.453.224-4.273 3.746-7.621 8.018-7.621.144 0 .289.004.435.012 4.428.231 7.842 4.023 7.609 8.453zM242.12 235.049c-12.784-.672-23.556 9.153-24.22 21.802a22.894 22.894 0 005.885 16.626 22.884 22.884 0 0015.917 7.595c.41.021.817.032 1.222.032 12.253 0 22.355-9.591 22.999-21.835.667-12.689-9.114-23.554-21.803-24.22zm6.822 23.434a8.034 8.034 0 01-8.453 7.609 7.992 7.992 0 01-5.555-2.65 7.99 7.99 0 01-2.054-5.803c.224-4.273 3.746-7.621 8.018-7.621.144 0 .289.004.435.012 4.428.231 7.842 4.023 7.609 8.453zM178.399 238.576c-12.789-.674-23.556 9.154-24.221 21.802a22.894 22.894 0 005.885 16.626c4.041 4.49 9.892 7.261 15.917 7.593.407.022.814.034 1.222.034 12.253 0 22.355-9.59 22.999-21.835.667-12.689-9.115-23.553-21.802-24.22zm6.821 23.433a8.027 8.027 0 01-8.453 7.609c-4.382-.23-7.839-4.075-7.609-8.453.224-4.273 3.746-7.621 8.018-7.621.144 0 .289.004.435.012 4.428.231 7.841 4.025 7.609 8.453zM114.676 242.102c-12.787-.673-23.556 9.154-24.221 21.803-.667 12.688 9.113 23.554 21.802 24.22.41.021.817.032 1.222.032 12.253 0 22.355-9.59 22.999-21.834.667-12.689-9.114-23.554-21.802-24.221zm6.822 23.433a8.031 8.031 0 01-8.453 7.609c-4.428-.232-7.842-4.024-7.609-8.453a8.033 8.033 0 018.453-7.609c4.428.233 7.841 4.025 7.609 8.453z"/>
+                <path d="M506.581 250.859c-30.304-53.748-71.974-57.924-84.023-57.924-1.704 0-2.734.087-2.873.101l-97.694 8.418-75.259-108.862c-8.314-12.027-21.445-19.564-36.025-20.677l-16.877-1.287c-15.047-1.148-25.812 15.215-18.787 28.581l26.466 50.334a7.499 7.499 0 0010.128 3.148 7.498 7.498 0 003.148-10.128L188.32 92.229c-1.644-3.13.878-6.909 4.368-6.643l16.877 1.287c10.047.766 19.097 5.959 24.827 14.25l70.387 101.815-55.722 4.801-18.496-35.174a7.5 7.5 0 10-13.276 6.98l15.56 29.591-159.61 13.756c-5.189.447-10.284-2.84-13.005-8.375l-17.928-36.465c-3.935-8.003-11.523-12.975-19.805-12.975-15.465 0-24.88 16.299-21.97 30.364l14.753 71.316c5.286 25.551 25.212 43.396 48.457 43.396h161.111l-53.946 102.639c-6.71 12.767 2.847 28.639 17.252 28.639 6.111 0 12.318-.88 18.412-1.346 14.58-1.112 27.71-8.647 36.025-20.676l75.53-109.256h159.392c11.67 0 22.424-6.482 28.767-17.34 7.517-12.874 7.633-28.948.301-41.954zm-13.257 34.385c-3.677 6.295-9.441 9.905-15.815 9.905H314.186a7.498 7.498 0 00-6.169 3.235l-77.767 112.49c-5.73 8.289-14.78 13.482-24.827 14.25l-16.877 1.287c-.133.01-.264.015-.394.015-3.371-.001-5.517-3.72-3.973-6.659l59.723-113.629a7.499 7.499 0 00-6.638-10.989H63.736c-16.053 0-29.939-12.925-33.767-31.434l-14.754-71.317c-.65-3.141-.07-6.379 1.592-8.883 1.258-1.894 3.314-3.439 5.688-3.439 2.52 0 4.95 1.76 6.343 4.593l17.928 36.464c5.102 10.377 15.981 17.717 27.755 16.703l244.42-21.063 102.038-8.793c.005 0 .565-.044 1.578-.044 9.993 0 44.646 3.626 70.956 50.291 4.653 8.251 4.579 18.855-.189 27.017z"/>
+              </svg>
+              <h5 class="card-title text-primary font-primary text-center my-2">AirPort Transfer</h5>
+              <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link d-block text-center font-primary">Learn More</a>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
    </div>
 
+    <!--======== Section 2 ========-->
+    <!--Tarrif Section-->
+   <div class="container pt-5 w-75 mb-5">
+        <h3 class="text-primary font-secondary text-center mt-5">Our Tarrifs</h3>
+
+    <!-- Tarriff Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="exampleModalLabel">Book a Taxi with Us</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <form action="">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" aria-label="First name" placeholder="Name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Phone">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Start Destination">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="End Destination">
+              </div>
+            </div>
+            <input type="datetime-local" class="form-control mt-3" placeholder="End Destination">
+            <button type="submit" class="btn btn-block btn-primary mt-3">BOOK NOW</button>
+          </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+          <!--Tariff Cards-->
+          <div class="row mt-5">
+            <div class="col-lg-4">
+             <div class="card w-100 p-lg-3  shadow" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-primary font-primary text-center my-2 mb-sm-2">Standared</h5>
+                <h3 class="display-5 font-weight-bold text-center text-primary font-primary"><sup class="text-primary font-weight-normal tarrif-hr">$</sup>5<span class="text-primary font-weight-normal tarrif-hr">/km</span></h3>
+                <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary btn-block rounded-pill font-primary" data-toggle="modal" data-target="#exampleModal">
+                  BOOK NOW
+                </button>
+              </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card w-100 p-lg-3  shadow" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-primary font-primary text-center my-2 mb-sm-2">Business</h5>
+                  <h3 class="display-5 font-weight-bold text-center text-primary font-primary"><sup class="text-primary font-weight-normal tarrif-hr">$</sup>7<span class="text-primary font-weight-normal tarrif-hr">/km</span></h3>
+                  <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary btn-block rounded-pill font-primary" data-toggle="modal" data-target="#exampleModal">
+                  BOOK NOW
+                </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card w-100 p-lg-3  shadow" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-primary font-primary text-center my-2 mb-sm-2">VIP</h5>
+                  <h3 class="display-5 font-weight-bold text-center text-primary font-primary"><sup class="text-primary font-weight-normal tarrif-hr">$</sup>10<span class="text-primary font-weight-normal tarrif-hr">/km</span></h3>
+                  <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary btn-block rounded-pill font-primary" data-toggle="modal" data-target="#exampleModal">
+                  BOOK NOW
+                </button>
+                </div>
+              </div>
+         </div>
+      </div>
+    
+   </div>
+
+   <!--======== Section 3 ========-->
+   <!--Download app section-->
+   <div class="bg-secondary mt-5 py-5">
+     <div class="container mx-auto py-5 w-75">
+       <div class="row">
+         <div class="col-md-6">
+           <h5 class="text-light font-primary text-uppercase font-weight-light text-sm-center">Search for Pick me</h5>
+           <h2 class="text-light font-secondary mt-3 display-6 text-sm-center">Get A mobile Application</h2>
+           <p class="mt-3 text-light text-sm-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, vel odio? Illum,  nesciunt necessitatibus ducimus enim.</p>
+           <div class="d-flex mt-3 d-sm-block  d-md-block d-lg-flex">
+             <div class="ml-sm-5">
+              <div class="d-flex">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle text-light mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                </svg>
+                <p class="ml-2 text-light">Fast Booking</p>
+              </div>
+             <div class="d-flex mt-1">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle text-light mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+              </svg>
+              <p class="ml-2 text-light">Bonuses for Rides</p>
+             </div>
+             </div>
+             <div class="ml-5">
+              <div class="d-flex">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle text-light mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                </svg>
+                <p class="ml-2 text-light">GPS Searching</p>
+              </div>
+             <div class="d-flex mt-1">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle text-light mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+              </svg>
+              <p class="ml-2 text-light">Easy to use</p>
+             </div>
+            </div>
+           </div>
+           <div class="mt-4 d-sm-block d-flex">
+            <button class="btn rounded-0 border border-light text-light d-flex font-primary">
+              <img src="assets/imgs/icons8-google-play-50.png" alt="" width="25px" class=" mr-2">
+              GOOGLE PLAY
+            </button>
+            <button class="btn rounded-0 border border-light text-light d-flex font-primary ml-3 mt-sm-2">
+              <img src="assets/imgs/icons8-apple-app-store-50.png" alt="" width="25px" class=" mr-2">
+              APP STORE
+            </button>
+          </div>
+         </div>
+         <div class="col-6 d-sm-none d-md-none d-lg-block">
+           <div class="img-wrap d-flex">
+            <img src="assets/imgs/iphone.png" alt="" width="200px">
+            <img src="assets/imgs/android.png" alt="" width="200px">
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
   <script src="assets/boostrap/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
